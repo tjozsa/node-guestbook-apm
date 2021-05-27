@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Guestbook
+    link(rel='stylesheet' href='http://evbogue.com/static/framework.css')
+  body
+    .contain
+      .eight.col.off-two
+        h1 Guestbook 
+        h3 Guests #{ lusers.length }
+    
+        h3 Sign my guestbook
+        h4 From Ev Bogue's repo at https://github.com/evbogue/node-redis-guestbook
+        form(method='post', action='/')
+          input(type='text' name='name' placeholder='Your name')
+          br
+          input(type='text' name='email' placeholder='you@youmail.com')
+          br
+          input(type='text' name='website' placeholder='http://www.yourwebsite.com/')
+          br
+          textarea(name='msg' placeholder='Your message*')
+          br
+          button Sign In
+          p *Keep it clean y'all.
+        h3 Guests
+        ul
+          each luser in lusers
+            li= luser
